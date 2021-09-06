@@ -1,0 +1,115 @@
+@import "../../styles/vars";
+
+$btnTypes: (
+  "primary": $primary,
+  "info": $info,
+  "success": $success,
+  "warning": $warning,
+  "danger": $danger,
+);
+
+$btnSize: (
+  "lg": (
+    8px 22px,
+    $font-size-base,
+    0,
+  ),
+  "normal": (
+    5px 13px,
+    $font-size-base,
+    0,
+  ),
+  "sm": (
+    4px 12px,
+    $font-size-sm,
+    0,
+  ),
+  "mini": (
+    1px 4px,
+    $font-size-sm,
+    0,
+  ),
+);
+
+@mixin buttonBase() {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  background-color: transparent;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  -webkit-appearance: none;
+}
+
+.btn {
+  @include buttonBase;
+  border: 1px solid $gray-3;
+  padding: 8px 12px;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  border-radius: 0;
+  color: $gray-5;
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    background-color: $gray-2 !important;
+    border-color: $gray-2 !important;
+  }
+
+  /* For each key in the map, created an own class */
+  @each $name, $value in $btnTypes {
+    &.btn-#{$name} {
+      background-color: $value !important;
+      color: #fff !important;
+      border-color: $value !important;
+      &:hover {
+        background-color: darken($value, 10%) !important;
+        border-color: darken($value, 10%) !important;
+      }
+      &:focus,
+      &:active {
+        background-color: $value !important;
+        color: #fff !important;
+        border-color: $value !important;
+      }
+
+      &[disabled] {
+        background-color: lighten($value, 18%) !important;
+        border-color: lighten($value, 18%) !important;
+        cursor: auto;
+        color: $gray-2 !important;
+      }
+    }
+  }
+
+  @each $name, $val in $btnSize {
+    &.btn-#{$name} {
+      padding: nth($val, 1) !important;
+      font-size: nth($val, 2) !important;
+      border-radius: nth($val, 3) !important;
+    }
+  }
+
+  &-link {
+    padding: 3px 8px;
+
+    &.disabled {
+      color: $gray-4;
+      cursor: not-allowed;
+    }
+  }
+  &.block {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+  &.round {
+    border-radius: 50px !important;
+  }
+
+  &[data-color] {
+    background-color: var(attr(data-color)) !important;
+    color: #fff !important;
+  }
+}

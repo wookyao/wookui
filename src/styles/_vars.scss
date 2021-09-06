@@ -1,0 +1,70 @@
+// 基础颜色配置
+$gray-1: #ffffff !default;
+$gray-2: #f2f2f2 !default;
+$gray-3: #e5e5e5 !default;
+$gray-4: #b2b2b2 !default;
+$gray-5: #595757 !default;
+$gray-6: #323232 !default;
+$gray-7: #000000 !default;
+
+$blur: #508cee !default;
+$orange: #fa7e23 !default;
+$yellow: #ffb540 !default;
+$green: #6db247 !default;
+$red: #ee3f4d !default;
+$cyan: #17a2b8 !default;
+
+// 主题色
+$primary: $blur !default;
+$success: $green !default;
+$info: $cyan !default;
+$danger: $red !default;
+$warning: $orange !default;
+
+//透明度
+$op-1: 0.85 !default;
+$op-2: 0.7 !default;
+$op-3: 0.6 !default;
+$op-4: 0.45 !default;
+$op-5: 0.3 !default;
+$op-6: 0.15 !default;
+$op-7: 0.08 !default;
+
+//字体
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+  "Liberation Mono", "Courier New", monospace !default;
+$font-family-base: $font-family-sans-serif !default;
+
+// 字体大小
+$font-size-base: 16px !default;
+$font-size-sm: 12px !default;
+$font-size-lg: 20px !default;
+
+// 字重
+$font-weight-lighter: lighter !default;
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-bold: 700 !default;
+$font-weight-bolder: bolder !default;
+$font-weight-base: $font-weight-normal !default;
+
+// 行高
+$line-height-base: 1.5 !default;
+$line-height-lg: 2 !default;
+$line-height-sm: 1.25 !default;
+
+// 间距
+$gutter-xl: 16px !default;
+$gutter-lg: 14px !default;
+$gutter-base: 12px !default;
+$gutter-sm: 8px !default;
+$gutter-mini: 6px !default;
+
+// 链接
+$link-color: $primary !default;
+$link-decoration: none !default;
+$link-hover-cover: darken($link-color, 15%) !default;
+$link-hover-decoration: underline !default;
