@@ -24,7 +24,7 @@ function App() {
           warning
         </Button>
         <h1>LinkButton</h1>
-        <Button btnType="link" disabled={true} href="www.baidu.com">
+        <Button btnType="link" href="www.baidu.com">
           www.baidu.com
         </Button>
       </header>

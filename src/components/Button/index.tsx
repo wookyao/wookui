@@ -63,8 +63,13 @@ const Button: React.FC<ButtonProps> = (props) => {
       }
     : {};
 
-  return btnType === "link" && href ? (
-    <a className={classes} href={disabled ? "#!" : href} {...restProps}>
+  let linkHref = href;
+  if (href?.indexOf("://") == -1) {
+    linkHref = `http://${href}`;
+  }
+
+  return btnType === "link" && linkHref ? (
+    <a className={classes} href={disabled ? "#!" : linkHref} {...restProps}>
       {children}
     </a>
   ) : (
