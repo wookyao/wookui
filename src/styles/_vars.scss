@@ -69,3 +69,8 @@ $link-color: $primary !default;
 $link-decoration: none !default;
 $link-hover-cover: darken($link-color, 15%) !default;
 $link-hover-decoration: underline !default;
+
+// 圆角
+$border-radius-base: 4px !default;
+$border-radius-sm: 2px !default;
+$border-radius-lg: 8px !default;

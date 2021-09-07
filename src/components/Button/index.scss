@@ -12,22 +12,22 @@ $btnSize: (
   "lg": (
     8px 22px,
     $font-size-base,
-    0,
+    $border-radius-base,
   ),
   "normal": (
     5px 13px,
     $font-size-base,
-    0,
+    $border-radius-base,
   ),
   "sm": (
     4px 12px,
     $font-size-sm,
-    0,
+    $border-radius-base,
   ),
   "mini": (
     1px 4px,
     $font-size-sm,
-    0,
+    $border-radius-sm,
   ),
 );
 
@@ -48,7 +48,7 @@ $btnSize: (
   padding: 8px 12px;
   font-size: $font-size-base;
   line-height: $line-height-base;
-  border-radius: 0;
+  border-radius: $border-radius-base;
   color: $gray-5;
   transition: all 0.25s ease-in-out;
   cursor: pointer;
