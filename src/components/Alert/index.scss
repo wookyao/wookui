@@ -1,0 +1,73 @@
+@import "../../styles/vars";
+
+$alertMaps: (
+  "primary": $primary,
+  "info": $info,
+  "success": $success,
+  "warning": $warning,
+  "danger": $danger,
+);
+
+.alert {
+  position: relative;
+  box-sizing: border-box;
+  padding: 6px 16px;
+  border-radius: 4px;
+  font-family: $font-family-base;
+  &.hasclose {
+    padding-bottom: 10px;
+  }
+
+  @each $name, $value in $alertMaps {
+    &.alert-#{$name} {
+      background-color: lighten($value, 32%);
+      color: darken($value, 10%);
+      .close {
+        &:hover {
+          background-color: lighten($value, 40%);
+        }
+        &:before,
+        &:after {
+          background-color: $value;
+        }
+      }
+    }
+  }
+  .title {
+    padding-top: 3px;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-base;
+    font-size: $font-size-base;
+  }
+  .desc {
+    padding: 2px 50px 4px 0;
+    font-size: $font-size-sm;
+    letter-spacing: 0.5px;
+  }
+
+  .close {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 6px;
+    right: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+    &:before,
+    &:after {
+      position: absolute;
+      content: "";
+      width: 16px;
+      height: 2px;
+      top: 50%;
+      left: 50%;
+    }
+    &:before {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+    &:after {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+}

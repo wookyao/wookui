@@ -64,7 +64,7 @@ const Button: React.FC<ButtonProps> = (props) => {
     : {};
 
   let linkHref = href;
-  if (href?.indexOf("://") == -1) {
+  if (href?.indexOf("://") === -1) {
     linkHref = `http://${href}`;
   }
 

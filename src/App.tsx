@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.scss";
 import Button from "./components/Button";
+import Alert from "./components/Alert/index";
 
 function App() {
   return (
@@ -27,6 +28,22 @@ function App() {
         <Button btnType="link" href="www.baidu.com">
           www.baidu.com
         </Button>
+
+        <h1>Alert</h1>
+        <Alert type="info" title="info" desc="This is an info alert" />
+        <Alert
+          className={"mtb"}
+          type="danger"
+          title="danger"
+          desc="This is an error alert"
+        />
+        <Alert
+          className={"mtb"}
+          type="success"
+          title="success"
+          desc="This is an success alert"
+        />
+        <Alert type="warning" title="warning" />
       </header>
     </div>
   );
