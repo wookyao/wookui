@@ -2,8 +2,13 @@ import React from "react";
 import "./App.scss";
 import Button from "./components/Button";
 import Alert from "./components/Alert/index";
+import { Menu, MenuItem } from "./components/Menu/index";
 
 function App() {
+  const handlerMenuSelect = (index: number) => {
+    console.log(index);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -44,6 +49,16 @@ function App() {
           desc="This is an success alert"
         />
         <Alert type="warning" title="warning" />
+
+        <h1>Menu</h1>
+        <Menu
+          defaultIndex={0}
+          onSelect={(index: number) => handlerMenuSelect(index)}
+        >
+          <MenuItem>link 1</MenuItem>
+          <MenuItem>link 1</MenuItem>
+          <MenuItem disabled>link 1</MenuItem>
+        </Menu>
       </header>
     </div>
   );
